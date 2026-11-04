@@ -280,7 +280,7 @@
     navigator.clipboard && navigator.clipboard.writeText(text).then(() => showToast(text + ' 복사했어요'));
   }
 
-  const ROSTER_CSV_URL = "https://docs.google.com/spreadsheets/d/1Qnov4NElwwBCkg6ikzL2OSLtSUVjWLeK4rUW8SDTCRQ/gviz/tq?tqx=out:csv&gid=0";
+  const ROSTER_CSV_URL = "roster.csv";
 
   function parseCsvLine(line) {
     // 이름/이메일에 콤마가 없다는 전제 하에 단순 split (충분히 안전함)
@@ -314,7 +314,7 @@
   }
 
   // Apps Script 웹앱 주소 (배포 후 여기에 붙여넣기). 비어 있으면 시트를 직접 조회해요.
-  const ROSTER_API_URL = "https://script.google.com/a/macros/musinsa.com/s/AKfycbxnHA9asMbRk23hRlr0vdOc5pz-7lV0JtbpZlNz8vNgBT3krv5_Rj2c4hZ0C-M0PiMXSQ/exec";
+  const ROSTER_API_URL = "";
 
   function loadFromApi() {
     return fetch(ROSTER_API_URL + (ROSTER_API_URL.includes('?') ? '&' : '?') + '_cb=' + Date.now(), { cache: 'no-store' })
